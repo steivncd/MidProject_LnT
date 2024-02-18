@@ -93,6 +93,7 @@ public class Main {
 				break;
 				
 			case 4:
+				library.sortData();
 				library.displayData();
 				System.out.println("Input nomor urutan yang ingin dihapus :");
 				int del = scan.nextInt();

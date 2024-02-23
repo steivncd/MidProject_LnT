@@ -1,10 +1,6 @@
 package library;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-
 
 public class Listdata {
 	ArrayList<Data> mydata = new ArrayList<>();
@@ -86,7 +82,7 @@ public class Listdata {
 			int countS = 1;
 			for(Data data : mydata) {
 				if(countS < s && data.position.equals("Supervisor")) {
-					data.salary += data.salary * 0.1;
+					data.salary += data.salary * 0.075;
 					countS++;
 				}
 			}
@@ -96,7 +92,7 @@ public class Listdata {
 			int countA = 1;
 			for(Data data : mydata) {
 				if(countA < a && data.position.equals("Admin")) {
-					data.salary += data.salary * 0.1;
+					data.salary += data.salary * 0.05;
 				}
 			}
 		}
@@ -105,12 +101,16 @@ public class Listdata {
 	
 	public void displayData() {
 		
-		System.out.printf("%-15s %-20s %-20s %-15s %s", "Kode karyawan", "Nama karyawan", "Jenis kelamin", "Jabatan", "Gaji karyawan");
+		sortData();
+		
+		System.out.printf("%-5s %-15s %-20s %-20s %-15s %s","No", "Kode karyawan", "Nama karyawan", "Jenis kelamin", "Jabatan", "Gaji karyawan");
 		System.out.printf("\n");
+		
+		int i = 1;
 		for(Data data : mydata) {
-			System.out.printf("%-15s %-22s %-17s %-18s %d\n", data.code, data.name, data.gender, data.position, data.salary);
+			System.out.printf("%-5d %-15s %-22s %-17s %-18s %d\n", i, data.code, data.name, data.gender, data.position, data.salary);
+			i++;
 		}
 		System.out.printf("\n");
 	}
-
 }

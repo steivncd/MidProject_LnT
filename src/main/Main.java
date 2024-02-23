@@ -35,9 +35,12 @@ public class Main {
 			case 1:
 				System.out.print("Input kode karyawan :");
 				String code = scan.nextLine();
-				
+
+				String nama;
+				do {
 				System.out.print("Input nama karyawan [ >=3 ] :");
-				String nama = scan.nextLine();
+				nama = scan.nextLine();
+				} while(nama.length() < 3);
 				
 				System.out.print("Input jenis kelamin [ Laki-laki | Perempuan ] :");
 				String gender = scan.nextLine();
@@ -60,14 +63,14 @@ public class Main {
 					
 					library.salary();
 					library.bonus(countM, countS, countA);
-					
+
 				break;
 			case 2:
-				library.sortData();
+
 				library.displayData();
 				break;
 			case 3:
-				library.sortData();
+				
 				library.displayData();
 				
 				System.out.println("Input nomor urutan karyawan yang ingin diupdate :");
@@ -87,13 +90,12 @@ public class Main {
 				String newPosition = scan.nextLine();
 				
 				library.uptData(index, newCode, newName, newGender, newPosition);
-				System.out.printf("Berhasil mengupdate karyawan dengan ID %s", newCode);
-				library.sortData();
+				System.out.printf("Berhasil mengupdate karyawan dengan ID %s\n", newCode);
+				
 				library.displayData();
 				break;
 				
 			case 4:
-				library.sortData();
 				library.displayData();
 				System.out.println("Input nomor urutan yang ingin dihapus :");
 				int del = scan.nextInt();
